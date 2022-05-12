@@ -163,7 +163,7 @@
                         <span class="sr-only">(current)</span>
                     </a>
                     <a class="nav-link" href="profile" id="navItem2">Profile</a>
-                    <a class="nav-link" href="orders" id="navItem2">Orders</a>
+                    <a class="nav-link" href="displayCart" id="navItem2">Orders</a>
                     <a class="nav-link" href="#historySection" id="navItem3">Address</a>
 
                 </div>

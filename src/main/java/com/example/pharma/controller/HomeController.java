@@ -25,12 +25,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.example.pharma.dao.CartDAOImpl;
-import com.example.pharma.dao.CustomerDAOImpl;
-import com.example.pharma.dao.EmployeeDAOImpl;
-import com.example.pharma.dao.MedicineDAOImpl;
-import com.example.pharma.dao.StockDAOImpl;
-import com.example.pharma.dao.SupplierDAOImpl;
+import com.example.pharma.daoImpl.CartDAOImpl;
+import com.example.pharma.daoImpl.CustomerDAOImpl;
+import com.example.pharma.daoImpl.EmployeeDAOImpl;
+import com.example.pharma.daoImpl.MedicineDAOImpl;
+import com.example.pharma.daoImpl.StockDAOImpl;
+import com.example.pharma.daoImpl.SupplierDAOImpl;
 import com.example.pharma.exception.UserNotFoundException;
 import com.example.pharma.model.Cart;
 import com.example.pharma.model.Contact;
@@ -42,7 +42,7 @@ import com.example.pharma.model.Stock;
 import com.example.pharma.model.Supplier;
 
 
-
+//This is a dispatcher
 
 
 /**
@@ -169,27 +169,27 @@ public ModelAndView checkEmployee(@RequestParam String emp_username) {
 	
 	
 	@RequestMapping("/checkCustomer") 
-	public ModelAndView checkCustomer(@RequestParam String cust_username) {
-		//
+	public ModelAndView checkCustomer(String cust_username) 
+	{
+		
 		ModelAndView view = new ModelAndView("custlogin");
-		// If input bean does not have any validation error then proceed
-		 {
+		
+
 			// If not a valid user then add error
 			// else proceed to user welcome page
-			if(!custDAO.search(cust_username)) {
-							
-	
+			if(!custDAO.search(cust_username) ) 
+			{
+						
+				
 			} else {
 				
 				view.setViewName("dashboardcustomer");
 				user=cust_username;	
 				
-				
 			}
+			return view;
+		 
 		
-		
-		}
-		return view;
 	}
 	
 	
@@ -410,8 +410,8 @@ public ModelAndView checkEmployee(@RequestParam String emp_username) {
 @RequestMapping(value = "/saveCart",method=RequestMethod.POST)
 public String saveCart(@ModelAttribute Cart cart) {
 	 cartDAO.deleteall();
-	 
-	cartDAO.save(cart);			
+	
+	cartDAO.save(cart);	
 	return "successcart";
 	
 }

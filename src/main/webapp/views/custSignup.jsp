@@ -57,11 +57,11 @@ p {
 
                 <div class="mb-3">
                     <label>Phone Number: </label>   
-            <input type="text" class="form-control" placeholder="Enter Number" name="cust_phone" required> 
+            <input type="tel" class="form-control" pattern="[0-9]{10}" placeholder="Enter Phone Number" name="cust_phone" required> 
                 </div>
                 <div class="mb-3">
                     <label for="email">Email</label>
-                    <input type="text" class="form-control" id="email" name="cust_email" placeholder="Enter Email"/>
+                    <input type="email" class="form-control" id="email" name="cust_email" placeholder="Enter Email"/>
                     <p id="emailErrMsg"></p>
                 </div>
                 <label for="gender">Gender</label>

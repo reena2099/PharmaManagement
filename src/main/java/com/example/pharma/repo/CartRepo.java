@@ -7,11 +7,12 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.example.pharma.model.Cart;
-;
+
 
 @Repository
 public interface CartRepo  extends JpaRepository<Cart,Long>  {
 	
-	
+	 
+
 
 }

@@ -8,7 +8,7 @@ public class Cart {
 	
 	
 	private long cart_id;
-	private  String med_price;
+	private  int med_price;
 	private String med_name;
 	private  int quantity;
 	private int total;
@@ -17,7 +17,7 @@ public class Cart {
 		super();
 	}
 
-	public Cart(long cart_id, String med_price, String med_name, int quantity, int total) {
+	public Cart(long cart_id, int med_price, String med_name, int quantity, int total) {
 		super();
 		this.cart_id = cart_id;
 		this.med_price = med_price;
@@ -35,11 +35,11 @@ public class Cart {
 		this.cart_id = cart_id;
 	}
 
-	public String getMed_price() {
+	public int getMed_price() {
 		return med_price;
 	}
 
-	public void setMed_price(String med_price) {
+	public void setMed_price(int med_price) {
 		this.med_price = med_price;
 	}
 
@@ -73,7 +73,6 @@ public class Cart {
 				+ quantity + ", total=" + total + "]";
 	}
 
-	
 	
 
 }
